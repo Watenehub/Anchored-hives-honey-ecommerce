@@ -171,9 +171,10 @@ const Layout = ({ children }) => {
             <div>
               <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li>📍 123 Honey Lane, Sweet Town</li>
-                <li>📞 +254 700 123 456</li>
-                <li>✉️ info@anchoredhives.com</li>
+                <li>📍 Kenya</li>
+                <li>📞 0723142634</li>
+                <li>✉️ anchoredhives@anchoredhives.com</li>
+                <li>🌐 www.anchoredhives.com</li>
               </ul>
               <div className="flex space-x-4 mt-4">
                 <a href="#" className="text-gray-400 hover:text-honey-500 transition-colors">Facebook</a>
@@ -184,7 +185,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 Anchored Bee Venture. All rights reserved.</p>
+            <p>&copy; 2026 Anchored Bee Venture. All rights reserved.</p>
           </div>
         </div>
       </footer>

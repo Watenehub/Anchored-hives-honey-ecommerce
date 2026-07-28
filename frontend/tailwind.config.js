@@ -7,6 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        royal_gold: '#D4AF37',
+        deep_black: '#0B0B0B',
+        warm_amber: '#FFB347',
+        ivory_white: '#FFFFF0',
         honey: {
           50: '#fffbeb',
           100: '#fef3c7',

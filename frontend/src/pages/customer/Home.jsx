@@ -64,6 +64,9 @@ const Home = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const images = ['/perfect-morning.jfif', '/download-5.jfif']
 
+  const [bgImageIndex, setBgImageIndex] = useState(0)
+  const bgImages = ['/anchored-bee-1.png', '/download-1.jfif']
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length)
@@ -71,19 +74,27 @@ const Home = () => {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgImageIndex((prev) => (prev + 1) % bgImages.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-honey-100 to-amber-100 py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-cover bg-center py-20" style={{ backgroundImage: `url('/honey-drip.jpg')` }}>
+        {/* subtle dark gradient overlay to improve text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Pure Organic <span className="text-honey-600">Honey</span>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Pure Organic <span className="text-honey-200">Honey</span>
               </h1>
-              <p className="text-xl text-gray-700 mb-8">
-                Experience the finest, purest honey from local beekeepers. 
-                100% natural, organic, and delicious.
+              <p className="text-xl text-white/90 mb-8">
+                Anchored bee is more than a honey company—it is a movement rooted in nature, community, and quality excellence.
               </p>
               <div className="flex space-x-4">
                 <Link to="/products" className="btn-primary text-lg px-8 py-3">
@@ -94,13 +105,8 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
-              <img
-                src={images[currentImage]}
-                alt="Honey Product"
-                className="w-80 h-80 object-cover rounded-lg shadow-xl animate-bounce"
-              />
-            </div>
+            {/* right column intentionally removed to display background image */}
+            <div className="md:w-1/2" />
           </div>
         </div>
       </section>
@@ -175,43 +181,57 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-honey-50">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 overflow-hidden">
+        {bgImages.map((img, i) => (
+          <div
+            key={img}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+            style={{
+              backgroundImage: `url(${img})`,
+              opacity: bgImageIndex === i ? 1 : 0,
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="p-8 md:p-12">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
-            <p className="text-gray-600 text-lg">What makes our honey special</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Us</h2>
+            <p className="text-white/90 text-lg">What makes our honey special</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
               <div className="w-16 h-16 bg-honey-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Leaf className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">100% Organic</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Our honey is sourced from organic farms with no additives or preservatives.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
               <div className="w-16 h-16 bg-honey-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Truck className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Fast Delivery</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Quick and reliable delivery to your doorstep within 2-3 business days.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
               <div className="w-16 h-16 bg-honey-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Every batch is tested to ensure the highest quality and purity standards.
               </p>
             </div>
+          </div>
+
           </div>
         </div>
       </section>
@@ -249,17 +269,17 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-honey-600">
+      <section className="py-16 bg-royal_gold">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-deep_black mb-4">
             Ready to Taste the Best Honey?
           </h2>
-          <p className="text-honey-100 text-lg mb-8">
-            Order now and get 10% off your first purchase!
+          <p className="text-deep_black text-lg mb-8">
+            Anchored Bee Venture is more than a honey company—it is a movement rooted in nature, community, and quality excellence.
           </p>
           <Link
             to="/products"
-            className="inline-block bg-white text-honey-600 font-semibold text-lg px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-block bg-deep_black text-royal_gold font-semibold text-lg px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors"
           >
             Start Shopping
           </Link>
