@@ -6,7 +6,8 @@ const featuredProducts = [
     id: 1,
     name: 'Pure Organic Honey',
     price: 2500,
-    image: '🍯',
+    image: '/honey.jpg',
+    imageType: 'local',
     rating: 4.8,
     category: 'Raw Honey'
   },
@@ -22,7 +23,8 @@ const featuredProducts = [
     id: 3,
     name: 'Manuka Honey',
     price: 4500,
-    image: '🐝',
+    image: '/honey.jpg',
+    imageType: 'local',
     rating: 4.9,
     category: 'Specialty'
   },
@@ -103,8 +105,16 @@ const Home = () => {
                 to={`/products/${product.id}`}
                 className="card hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="h-48 bg-honey-50 flex items-center justify-center">
-                  <span className="text-8xl">{product.image}</span>
+                <div className="h-48 bg-honey-50 flex items-center justify-center overflow-hidden">
+                  {product.imageType === 'local' ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-8xl">{product.image}</span>
+                  )}
                 </div>
                 <div className="p-4">
                   <span className="text-sm text-honey-600 font-medium">{product.category}</span>
