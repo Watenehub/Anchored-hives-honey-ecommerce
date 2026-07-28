@@ -21,7 +21,7 @@ const Settings = () => {
             <label className="block text-sm font-medium text-gray-700 mb-2">Store Name</label>
             <input
               type="text"
-              defaultValue="Anchored Hives Honey"
+              defaultValue="Anchored Bee Venture"
               className="input-field"
             />
           </div>

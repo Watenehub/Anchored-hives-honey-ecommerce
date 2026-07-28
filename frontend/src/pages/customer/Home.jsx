@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Star, Truck, Leaf, Award, ChevronRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const featuredProducts = [
   {
@@ -60,6 +61,16 @@ const testimonials = [
 ]
 
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0)
+  const images = ['/perfect-morning.jfif', '/download-5.jfif']
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div>
       {/* Hero Section */}
@@ -84,7 +95,11 @@ const Home = () => {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <div className="text-9xl animate-bounce">🍯</div>
+              <img
+                src={images[currentImage]}
+                alt="Honey Product"
+                className="w-80 h-80 object-cover rounded-lg shadow-xl animate-bounce"
+              />
             </div>
           </div>
         </div>

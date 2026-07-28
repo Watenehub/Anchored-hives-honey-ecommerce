@@ -16,10 +16,13 @@ const Layout = ({ children }) => {
           {/* Top bar */}
           <div className="flex items-center justify-between py-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-honey-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">🍯</span>
-              </div>
-              <span className="text-2xl font-bold text-honey-700">Anchored Hives</span>
+              <img
+                src="/anchored-logo.png"
+                alt="Anchored Bee Venture Logo"
+                className="w-12 h-12 object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+              <span className="text-2xl font-bold text-honey-700">Anchored Bee Venture</span>
             </Link>
 
             {/* Search bar - Desktop */}
@@ -129,10 +132,13 @@ const Layout = ({ children }) => {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-honey-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">🍯</span>
-                </div>
-                <span className="text-xl font-bold">Anchored Hives</span>
+                <img
+                  src="/anchored-logo.png"
+                  alt="Anchored Bee Venture Logo"
+                  className="w-10 h-10 object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+                <span className="text-xl font-bold">Anchored Bee Venture</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Premium organic honey products from local beekeepers. Pure, natural, and delicious.
@@ -178,7 +184,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 Anchored Hives Honey. All rights reserved.</p>
+            <p>&copy; 2024 Anchored Bee Venture. All rights reserved.</p>
           </div>
         </div>
       </footer>

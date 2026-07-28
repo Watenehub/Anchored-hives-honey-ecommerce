@@ -29,9 +29,12 @@ const SellerLayout = () => {
       {/* Mobile Header */}
       <div className="lg:hidden bg-white shadow-md p-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-honey-500 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">🍯</span>
-          </div>
+          <img
+            src="/anchored-logo.png"
+            alt="Anchored Bee Venture Logo"
+            className="w-8 h-8 object-contain"
+            style={{ mixBlendMode: 'multiply' }}
+          />
           <span className="font-bold text-gray-900">Seller Portal</span>
         </div>
         <button
@@ -53,11 +56,14 @@ const SellerLayout = () => {
         `}>
           <div className="p-6">
             <div className="flex items-center space-x-2 mb-8">
-              <div className="w-10 h-10 bg-honey-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">🍯</span>
-              </div>
+              <img
+                src="/anchored-logo.png"
+                alt="Anchored Bee Venture Logo"
+                className="w-10 h-10 object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
               <div>
-                <h1 className="font-bold text-lg">Anchored Hives</h1>
+                <h1 className="font-bold text-lg">Anchored Bee Venture</h1>
                 <p className="text-xs text-gray-400">Seller Portal</p>
               </div>
             </div>
