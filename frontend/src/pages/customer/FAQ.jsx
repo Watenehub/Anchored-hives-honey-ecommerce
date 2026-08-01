@@ -235,7 +235,7 @@ const FAQ = () => {
     },
     {
       question: "How is your honey sourced?",
-      answer: "We work with local rural beekeepers from Farms in Kitui,Makueni and Baringowho follow sustainable and organic practices."
+      answer: "We work with local rural beekeepers from Farms in Kitui,Makueni and Baringo who follow sustainable and organic practices."
     },
     {
       question: "Do you add preservatives?",
