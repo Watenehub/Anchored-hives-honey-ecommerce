@@ -235,11 +235,11 @@ const FAQ = () => {
     },
     {
       question: "How is your honey sourced?",
-      answer: "We work with local rural beekeepers who follow sustainable and organic practices."
+      answer: "We work with local rural beekeepers from Farms in Kitui,Makueni and Baringowho follow sustainable and organic practices."
     },
     {
       question: "Do you add preservatives?",
-      answer: "No — our honey is raw and unprocessed with no additives."
+      answer: "Our honey is raw and unprocessed with no additives or Preservatives."
     }
   ]
 
