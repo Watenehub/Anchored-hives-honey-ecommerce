@@ -10,6 +10,10 @@ import ProductDetail from './pages/customer/ProductDetail'
 import Cart from './pages/customer/Cart'
 import Checkout from './pages/customer/Checkout'
 import OrderSuccess from './pages/customer/OrderSuccess'
+import FAQ from './pages/customer/FAQ'
+import Privacy from './pages/customer/Privacy'
+import Returns from './pages/customer/Returns'
+import Shipping from './pages/customer/Shipping'
 import Dashboard from './pages/admin/Dashboard'
 import AdminProducts from './pages/admin/Products'
 import AdminOrders from './pages/admin/Orders'
@@ -37,6 +41,10 @@ function App() {
           <Route path="/cart" element={<Layout><Cart /></Layout>} />
           <Route path="/checkout" element={<Layout><Checkout /></Layout>} />
           <Route path="/order-success" element={<Layout><OrderSuccess /></Layout>} />
+          <Route path="/faq" element={<Layout><FAQ /></Layout>} />
+          <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
+          <Route path="/returns" element={<Layout><Returns /></Layout>} />
+          <Route path="/shipping" element={<Layout><Shipping /></Layout>} />
           
           {/* Admin routes */}
           <Route path="/admin" element={<AdminLayout />}>
