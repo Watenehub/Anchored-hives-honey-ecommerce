@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Star, Truck, Leaf, Award, ChevronRight } from 'lucide-react'
+import { Star, Truck, Leaf, Award, ChevronRight, Flower2, Coffee } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const featuredProducts = [
@@ -14,11 +14,13 @@ const featuredProducts = [
   },
   {
     id: 2,
-    name: 'Wildflower Honey',
+    name: 'Organic Blossom Honey',
     price: 2200,
-    image: '🌸',
+    image: '/our-organic-honey.jfif',
+    imageType: 'local',
     rating: 4.7,
-    category: 'Raw Honey'
+    category: 'Raw Honey',
+    icon: Flower2
   },
   {
     id: 3,
@@ -31,11 +33,13 @@ const featuredProducts = [
   },
   {
     id: 4,
-    name: 'Clover Honey',
+    name: 'Perfect Morning Honey',
     price: 2000,
-    image: '🌼',
+    image: '/perfect-morning.jfif',
+    imageType: 'local',
     rating: 4.6,
-    category: 'Raw Honey'
+    category: 'Raw Honey',
+    icon: Coffee
   }
 ]
 
@@ -120,52 +124,61 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <Link
-                key={product.id}
-                to={`/products/${product.id}`}
-                className="card hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="h-48 bg-honey-50 flex items-center justify-center overflow-hidden">
-                  {product.imageType === 'local' ? (
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-8xl">{product.image}</span>
-                  )}
-                </div>
-                <div className="p-4">
-                  <span className="text-sm text-honey-600 font-medium">{product.category}</span>
-                  <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center mb-2">
-                    <div className="flex items-center text-honey-500">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${
-                            i < Math.floor(product.rating) ? 'fill-current' : ''
-                          }`}
-                        />
-                      ))}
+            {featuredProducts.map((product) => {
+              const Icon = product.icon
+              return (
+                <Link
+                  key={product.id}
+                  to={`/products/${product.id}`}
+                  className="card hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="relative h-48 bg-honey-50 flex items-center justify-center overflow-hidden">
+                    {product.imageType === 'local' ? (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-8xl">{product.image}</span>
+                    )}
+
+                    {Icon ? (
+                      <div className="absolute top-3 right-3 bg-white/90 rounded-full p-2 shadow">
+                        <Icon className="w-5 h-5 text-honey-600" />
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className="p-4">
+                    <span className="text-sm text-honey-600 font-medium">{product.category}</span>
+                    <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2">
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center mb-2">
+                      <div className="flex items-center text-honey-500">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < Math.floor(product.rating) ? 'fill-current' : ''
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-sm text-gray-600 ml-2">{product.rating}</span>
                     </div>
-                    <span className="text-sm text-gray-600 ml-2">{product.rating}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-2xl font-bold text-honey-700">
+                        KES {product.price.toLocaleString()}
+                      </span>
+                      <button className="text-honey-600 hover:text-honey-700 font-medium">
+                        View Details
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-honey-700">
-                      KES {product.price.toLocaleString()}
-                    </span>
-                    <button className="text-honey-600 hover:text-honey-700 font-medium">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              )
+            })}
           </div>
 
           <div className="text-center mt-12">
