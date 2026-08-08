@@ -50,11 +50,12 @@ const Checkout = () => {
   }
 
   return (
-    <div className="py-8">
-      <div className="container mx-auto px-4">
+    <div className="py-8 bg-gradient-to-b from-amber-100 to-amber-50 relative">
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', mixBlendMode: 'multiply' }}></div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/cart" className="inline-flex items-center text-honey-600 hover:text-honey-700 font-medium mb-4">
+          <Link to="/cart" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium mb-4">
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Cart
           </Link>
@@ -66,10 +67,10 @@ const Checkout = () => {
           <div className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Delivery Information */}
-              <div className="card">
+              <div>
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-xl font-semibold text-gray-900 flex items-center">
-                    <Truck className="w-5 h-5 mr-2 text-honey-600" />
+                    <Truck className="w-5 h-5 mr-2 text-amber-600" />
                     Delivery Information
                   </h2>
                 </div>
@@ -85,7 +86,7 @@ const Checkout = () => {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       required
-                      className="input-field"
+                      className="w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -100,7 +101,7 @@ const Checkout = () => {
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
                       required
-                      className="input-field"
+                      className="w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                       placeholder="+254 7XX XXX XXX"
                     />
                   </div>
@@ -115,7 +116,7 @@ const Checkout = () => {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      className="input-field"
+                      className="w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                       placeholder="Street address, building, apartment"
                     />
                   </div>
@@ -130,7 +131,7 @@ const Checkout = () => {
                       value={formData.townCity}
                       onChange={handleInputChange}
                       required
-                      className="input-field"
+                      className="w-full px-4 py-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                       placeholder="Enter your town or city"
                     />
                   </div>
@@ -138,7 +139,7 @@ const Checkout = () => {
               </div>
 
               {/* Payment Method */}
-              <div className="card">
+              <div>
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-xl font-semibold text-gray-900">Payment Method</h2>
                 </div>
@@ -147,7 +148,7 @@ const Checkout = () => {
                   {/* M-Pesa */}
                   <label className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                     formData.paymentMethod === 'mpesa' 
-                      ? 'border-honey-500 bg-honey-50' 
+                      ? 'border-amber-500 bg-amber-100' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}>
                     <input
@@ -164,14 +165,14 @@ const Checkout = () => {
                       <p className="text-sm text-gray-600">Pay via M-Pesa mobile money</p>
                     </div>
                     {formData.paymentMethod === 'mpesa' && (
-                      <CheckCircle className="w-6 h-6 text-honey-600" />
+                      <CheckCircle className="w-6 h-6 text-amber-600" />
                     )}
                   </label>
 
                   {/* Cash on Delivery */}
                   <label className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                     formData.paymentMethod === 'cod' 
-                      ? 'border-honey-500 bg-honey-50' 
+                      ? 'border-amber-500 bg-amber-100' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}>
                     <input
@@ -188,14 +189,14 @@ const Checkout = () => {
                       <p className="text-sm text-gray-600">Pay when you receive your order</p>
                     </div>
                     {formData.paymentMethod === 'cod' && (
-                      <CheckCircle className="w-6 h-6 text-honey-600" />
+                      <CheckCircle className="w-6 h-6 text-amber-600" />
                     )}
                   </label>
 
                   {/* Bank Transfer */}
                   <label className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                     formData.paymentMethod === 'bank' 
-                      ? 'border-honey-500 bg-honey-50' 
+                      ? 'border-amber-500 bg-amber-100' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}>
                     <input
@@ -212,7 +213,7 @@ const Checkout = () => {
                       <p className="text-sm text-gray-600">Direct bank transfer</p>
                     </div>
                     {formData.paymentMethod === 'bank' && (
-                      <CheckCircle className="w-6 h-6 text-honey-600" />
+                      <CheckCircle className="w-6 h-6 text-amber-600" />
                     )}
                   </label>
                 </div>
@@ -227,7 +228,7 @@ const Checkout = () => {
                   className="mt-1 mr-3"
                 />
                 <label htmlFor="terms" className="text-sm text-gray-600">
-                  I agree to the <Link to="/terms" className="text-honey-600 hover:underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-honey-600 hover:underline">Privacy Policy</Link>
+                  I agree to the <Link to="/terms" className="text-amber-600 hover:underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-amber-600 hover:underline">Privacy Policy</Link>
                 </label>
               </div>
 
@@ -235,7 +236,7 @@ const Checkout = () => {
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="btn-primary w-full py-4 text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-amber-600 text-white w-full py-4 text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg hover:bg-amber-700 transition-colors"
               >
                 {isProcessing ? (
                   <>
@@ -245,7 +246,7 @@ const Checkout = () => {
                 ) : (
                   <>
                     <span>Place Order</span>
-                    <span className="text-honey-200">- KES {finalTotal.toLocaleString()}</span>
+                    <span className="text-amber-200">- KES {finalTotal.toLocaleString()}</span>
                   </>
                 )}
               </button>
@@ -254,7 +255,7 @@ const Checkout = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="card sticky top-24">
+            <div className="sticky top-24">
               <div className="p-6 border-b border-gray-200">
                 <h2 className="text-xl font-semibold text-gray-900">Order Summary</h2>
               </div>
@@ -264,7 +265,7 @@ const Checkout = () => {
                 <div className="space-y-4 mb-6 max-h-64 overflow-y-auto">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-honey-50 rounded flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded flex items-center justify-center flex-shrink-0">
                         <span className="text-2xl">{item.image}</span>
                       </div>
                       <div className="flex-1 min-w-0">
@@ -301,7 +302,7 @@ const Checkout = () => {
                   <div className="border-t border-gray-200 pt-3">
                     <div className="flex justify-between text-gray-900">
                       <span className="text-lg font-semibold">Total</span>
-                      <span className="text-2xl font-bold text-honey-700">
+                      <span className="text-2xl font-bold text-amber-700">
                         KES {finalTotal.toLocaleString()}
                       </span>
                     </div>
@@ -309,7 +310,7 @@ const Checkout = () => {
                 </div>
 
                 {/* Payment Info */}
-                <div className="mt-6 p-4 bg-honey-50 rounded-lg">
+                <div className="mt-6 p-4 rounded-lg">
                   <h3 className="font-semibold text-gray-900 mb-2">Payment Method</h3>
                   <p className="text-sm text-gray-600 capitalize">
                     {formData.paymentMethod === 'mpesa' && 'M-Pesa'}

@@ -155,8 +155,9 @@ const Products = () => {
   })
 
   return (
-    <div className="py-8">
-      <div className="container mx-auto px-4">
+    <div className="py-8 bg-gradient-to-b from-amber-100 to-amber-50 relative">
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', mixBlendMode: 'multiply' }}></div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Our Products</h1>
@@ -166,7 +167,7 @@ const Products = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className="lg:w-64 flex-shrink-0">
-            <div className="card p-6 sticky top-24">
+            <div className="p-6 sticky top-24">
               <div className="flex items-center mb-6">
                 <Filter className="w-5 h-5 text-honey-600 mr-2" />
                 <h3 className="font-semibold text-lg">Filters</h3>
@@ -182,8 +183,8 @@ const Products = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`block w-full text-left px-3 py-2 rounded-lg transition-colors ${
                         selectedCategory === category
-                          ? 'bg-honey-500 text-white'
-                          : 'text-gray-700 hover:bg-gray-100'
+                          ? 'bg-amber-600 text-white'
+                          : 'text-gray-700 hover:bg-amber-100'
                       }`}
                     >
                       {category}
@@ -198,7 +199,7 @@ const Products = () => {
                 <select
                   value={priceRange}
                   onChange={(e) => setPriceRange(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+                  className="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 bg-amber-50/50"
                 >
                   <option value="all">All Prices</option>
                   <option value="low">Under KES 2,500</option>
@@ -213,7 +214,7 @@ const Products = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+                  className="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 bg-amber-50/50"
                 >
                   <option value="default">Default</option>
                   <option value="price-low">Price: Low to High</option>
@@ -239,7 +240,7 @@ const Products = () => {
                     setPriceRange('all')
                     setSortBy('default')
                   }}
-                  className="mt-4 btn-primary"
+                  className="mt-4 bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors"
                 >
                   Clear Filters
                 </button>
@@ -250,9 +251,9 @@ const Products = () => {
                   <Link
                     key={product.id}
                     to={`/products/${product.id}`}
-                    className="card hover:shadow-xl transition-shadow duration-300"
+                    className="hover:shadow-xl transition-shadow duration-300"
                   >
-                    <div className="h-48 bg-honey-50 flex items-center justify-center relative">
+                    <div className="h-48 flex items-center justify-center relative">
                       <span className="text-8xl">{product.image}</span>
                       {product.stock < 20 && (
                         <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
@@ -261,12 +262,12 @@ const Products = () => {
                       )}
                     </div>
                     <div className="p-4">
-                      <span className="text-sm text-honey-600 font-medium">{product.category}</span>
+                      <span className="text-sm text-amber-600 font-medium">{product.category}</span>
                       <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2">
                         {product.name}
                       </h3>
                       <div className="flex items-center mb-2">
-                        <div className="flex items-center text-honey-500">
+                        <div className="flex items-center text-amber-600">
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
@@ -279,10 +280,10 @@ const Products = () => {
                         <span className="text-sm text-gray-600 ml-2">{product.rating}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-honey-700">
+                        <span className="text-2xl font-bold text-amber-700">
                           KES {product.price.toLocaleString()}
                         </span>
-                        <button className="text-honey-600 hover:text-honey-700 font-medium">
+                        <button className="text-amber-600 hover:text-amber-700 font-medium">
                           View Details
                         </button>
                       </div>

@@ -3,10 +3,10 @@ import React from 'react'
 const Privacy = () => {
   return (
     <section className="py-16 relative">
-      <div className="fixed inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '60%', mixBlendMode: 'multiply' }}></div>
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', mixBlendMode: 'multiply' }}></div>
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <h1 className="text-3xl font-bold mb-6">Anchored Bee Privacy Policy</h1>
-        <div className="prose text-gray-700 max-w-6xl text-center">
+        <h1 className="text-4xl font-bold mb-8 text-amber-900">Anchored Bee Privacy Policy</h1>
+        <div className="prose prose-lg prose-amber max-w-4xl mx-auto text-left">
           <p className="mb-6">Below is a professional Privacy Policy suitable for Anchored Bee, a honey and bee products company. It should be customised with your official business address, email, website, and applicable legal requirements before publication. Businesses that collect customer information online should clearly explain what data they collect, why they collect it, how it is protected, and customers' rights.</p>
           
           <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
@@ -14,23 +14,48 @@ const Privacy = () => {
           
           <h2 className="text-xl font-semibold mb-3">2. Information We Collect</h2>
           <p className="mb-2">We may collect the following information:</p>
-          <p className="mb-6">Full name, Email address, Phone number, Delivery or billing address, Payment information (processed securely through authorised payment providers), Purchase history, Website usage information (cookies, browser type, IP address)</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Delivery or billing address</li>
+            <li>Payment information (processed securely through authorised payment providers)</li>
+            <li>Purchase history</li>
+            <li>Website usage information (cookies, browser type, IP address)</li>
+          </ul>
           
           <h2 className="text-xl font-semibold mb-3">3. How We Use Your Information</h2>
           <p className="mb-2">Your information may be used to:</p>
-          <p className="mb-6">Process and deliver orders, Respond to inquiries and customer support requests, Improve our products and services, Send order confirmations and delivery updates, Share promotional offers (only with your consent where required), Meet legal and regulatory obligations</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Process and deliver orders</li>
+            <li>Respond to inquiries and customer support requests</li>
+            <li>Improve our products and services</li>
+            <li>Send order confirmations and delivery updates</li>
+            <li>Share promotional offers (only with your consent where required)</li>
+            <li>Meet legal and regulatory obligations</li>
+          </ul>
           
           <h2 className="text-xl font-semibold mb-3">4. Data Sharing</h2>
           <p className="mb-2">Anchored Bee does not sell or rent customer information.</p>
           <p className="mb-2">We may share information only with:</p>
-          <p className="mb-6">Delivery and logistics partners, Secure payment processors, Technology service providers, Government authorities where required by law</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Delivery and logistics partners</li>
+            <li>Secure payment processors</li>
+            <li>Technology service providers</li>
+            <li>Government authorities where required by law</li>
+          </ul>
           
           <h2 className="text-xl font-semibold mb-3">5. Data Security</h2>
           <p className="mb-6">We implement appropriate administrative, technical, and physical safeguards to protect your personal information from unauthorised access, disclosure, alteration, or destruction.</p>
           
           <h2 className="text-xl font-semibold mb-3">6. Cookies</h2>
           <p className="mb-2">Our website may use cookies to:</p>
-          <p className="mb-6">Improve website functionality, Remember user preferences, Analyse website traffic, Enhance customer experience</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Improve website functionality</li>
+            <li>Remember user preferences</li>
+            <li>Analyse website traffic</li>
+            <li>Enhance customer experience</li>
+          </ul>
           <p className="mb-6">You may disable cookies through your browser settings, although some website features may not function properly.</p>
           
           <h2 className="text-xl font-semibold mb-3">7. Marketing Communications</h2>
@@ -38,11 +63,22 @@ const Privacy = () => {
           
           <h2 className="text-xl font-semibold mb-3">8. Data Retention</h2>
           <p className="mb-2">We retain personal information only for as long as necessary to:</p>
-          <p className="mb-6">Fulfil customer orders, Maintain business records, Comply with tax and legal obligations, Resolve disputes</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Fulfil customer orders</li>
+            <li>Maintain business records</li>
+            <li>Comply with tax and legal obligations</li>
+            <li>Resolve disputes</li>
+          </ul>
           
           <h2 className="text-xl font-semibold mb-3">9. Your Rights</h2>
           <p className="mb-2">Subject to applicable law, you may have the right to:</p>
-          <p className="mb-6">Access your personal information, Correct inaccurate information, Request deletion of your data, Restrict or object to certain processing, Withdraw consent where applicable</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Access your personal information</li>
+            <li>Correct inaccurate information</li>
+            <li>Request deletion of your data</li>
+            <li>Restrict or object to certain processing</li>
+            <li>Withdraw consent where applicable</li>
+          </ul>
           
           <h2 className="text-xl font-semibold mb-3">10. Children's Privacy</h2>
           <p className="mb-6">Anchored Bee does not knowingly collect personal information from children under the age required by applicable law without parental or guardian consent.</p>
@@ -54,8 +90,14 @@ const Privacy = () => {
           <p className="mb-6">We may update this Privacy Policy from time to time. Changes will be posted on our website with an updated effective date.</p>
           
           <h2 className="text-xl font-semibold mb-3">13. Contact Us</h2>
-          <p className="mb-2">For questions or requests regarding this Privacy Policy, please contact us:</p>
-          <a href="/contact" className="text-blue-600 hover:text-blue-800 underline font-semibold">Contact Us</a>
+          <p className="mb-2">For questions or requests regarding this Privacy Policy, please contact:</p>
+          <div className="p-4 rounded-lg mb-6 bg-amber-200/50">
+            <p className="font-semibold mb-2">Anchored Bee</p>
+            <p className="mb-1">Email: info@anchoredbee.com</p>
+            <p className="mb-1">Phone: +254 723 142 634</p>
+            <p className="mb-1">Website: www.Anchoredbeeventure.com</p>
+            <p>Address: 77027-00100 Nairobi-Kenya</p>
+          </div>
           
           <p className="text-sm text-gray-600">This policy provides a strong foundation for customer transparency and aligns with common privacy policy practices for businesses that collect customer information. If Anchored Bee operates an e-commerce website or serves customers in jurisdictions with specific privacy laws (such as GDPR or other regional regulations), it should be reviewed and adapted to meet those legal requirements.</p>
         </div>

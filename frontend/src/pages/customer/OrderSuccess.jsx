@@ -3,8 +3,9 @@ import { CheckCircle, ShoppingBag, Home, Package } from 'lucide-react'
 
 const OrderSuccess = () => {
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
+    <div className="py-16 bg-gradient-to-b from-amber-100 to-amber-50 relative">
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', mixBlendMode: 'multiply' }}></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           {/* Success Icon */}
           <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -20,9 +21,9 @@ const OrderSuccess = () => {
           </p>
 
           {/* Order Details Card */}
-          <div className="card p-8 mb-8">
+          <div className="p-8 mb-8">
             <div className="flex items-center justify-center mb-6">
-              <Package className="w-8 h-8 text-honey-600 mr-3" />
+              <Package className="w-8 h-8 text-amber-600 mr-3" />
               <h2 className="text-2xl font-semibold text-gray-900">Order Details</h2>
             </div>
 
@@ -47,23 +48,23 @@ const OrderSuccess = () => {
           </div>
 
           {/* Next Steps */}
-          <div className="bg-honey-50 rounded-lg p-6 mb-8">
+          <div className="rounded-lg p-6 mb-8">
             <h3 className="font-semibold text-gray-900 mb-4">What's Next?</h3>
             <ul className="text-left space-y-3 text-gray-700">
               <li className="flex items-start">
-                <span className="text-honey-600 mr-2">1.</span>
+                <span className="text-amber-600 mr-2">1.</span>
                 <span>You will receive an order confirmation email shortly</span>
               </li>
               <li className="flex items-start">
-                <span className="text-honey-600 mr-2">2.</span>
+                <span className="text-amber-600 mr-2">2.</span>
                 <span>We'll prepare your order for shipment</span>
               </li>
               <li className="flex items-start">
-                <span className="text-honey-600 mr-2">3.</span>
+                <span className="text-amber-600 mr-2">3.</span>
                 <span>You'll receive tracking information once shipped</span>
               </li>
               <li className="flex items-start">
-                <span className="text-honey-600 mr-2">4.</span>
+                <span className="text-amber-600 mr-2">4.</span>
                 <span>Your order will be delivered to your doorstep</span>
               </li>
             </ul>
@@ -73,14 +74,14 @@ const OrderSuccess = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/products"
-              className="btn-primary inline-flex items-center justify-center space-x-2 py-3 px-8"
+              className="bg-amber-600 text-white inline-flex items-center justify-center space-x-2 py-3 px-8 rounded-lg hover:bg-amber-700 transition-colors"
             >
               <ShoppingBag className="w-5 h-5" />
               <span>Continue Shopping</span>
             </Link>
             <Link
               to="/"
-              className="btn-secondary inline-flex items-center justify-center space-x-2 py-3 px-8"
+              className="bg-amber-500 text-white inline-flex items-center justify-center space-x-2 py-3 px-8 rounded-lg hover:bg-amber-600 transition-colors"
             >
               <Home className="w-5 h-5" />
               <span>Back to Home</span>
@@ -90,7 +91,7 @@ const OrderSuccess = () => {
           {/* Contact Support */}
           <div className="mt-8 text-gray-600">
             <p>Need help? Contact our support team at</p>
-            <a href="mailto:support@anchoredhives.com" className="text-honey-600 hover:underline">
+            <a href="mailto:support@anchoredhives.com" className="text-amber-600 hover:underline">
               support@anchoredhives.com
             </a>
           </div>

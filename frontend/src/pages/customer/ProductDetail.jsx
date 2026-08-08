@@ -173,7 +173,7 @@ const ProductDetail = () => {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Product Not Found</h1>
-        <Link to="/products" className="btn-primary">
+        <Link to="/products" className="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
           Back to Products
         </Link>
       </div>
@@ -196,13 +196,14 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="py-8">
-      <div className="container mx-auto px-4">
+    <div className="py-8 bg-gradient-to-b from-amber-100 to-amber-50 relative">
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0" style={{ backgroundImage: 'url(/watermark-logo.png)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', mixBlendMode: 'multiply' }}></div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Breadcrumb */}
         <div className="mb-8 text-sm text-gray-600">
-          <Link to="/" className="hover:text-honey-600">Home</Link>
+          <Link to="/" className="hover:text-amber-600">Home</Link>
           <span className="mx-2">/</span>
-          <Link to="/products" className="hover:text-honey-600">Products</Link>
+          <Link to="/products" className="hover:text-amber-600">Products</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-900">{product.name}</span>
         </div>
@@ -210,17 +211,17 @@ const ProductDetail = () => {
         {/* Product Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Product Image */}
-          <div className="bg-honey-50 rounded-2xl flex items-center justify-center p-8 h-96">
+          <div className="rounded-2xl flex items-center justify-center p-8 h-96">
             <span className="text-9xl">{product.image}</span>
           </div>
 
           {/* Product Info */}
           <div>
-            <span className="text-honey-600 font-medium">{product.category}</span>
+            <span className="text-amber-600 font-medium">{product.category}</span>
             <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-4">{product.name}</h1>
             
             <div className="flex items-center mb-4">
-              <div className="flex items-center text-honey-500">
+              <div className="flex items-center text-amber-600">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -233,7 +234,7 @@ const ProductDetail = () => {
               <span className="text-gray-600 ml-2">{product.rating} out of 5</span>
             </div>
 
-            <div className="text-4xl font-bold text-honey-700 mb-6">
+            <div className="text-4xl font-bold text-amber-700 mb-6">
               KES {product.price.toLocaleString()}
             </div>
 
@@ -254,19 +255,19 @@ const ProductDetail = () => {
 
             {/* Product Details */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="p-4 rounded-lg">
                 <span className="text-gray-600 text-sm">Weight</span>
                 <p className="font-semibold text-gray-900">{product.weight}</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="p-4 rounded-lg">
                 <span className="text-gray-600 text-sm">Origin</span>
                 <p className="font-semibold text-gray-900">{product.origin}</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="p-4 rounded-lg">
                 <span className="text-gray-600 text-sm">Stock</span>
                 <p className="font-semibold text-gray-900">{product.stock} units</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="p-4 rounded-lg">
                 <span className="text-gray-600 text-sm">SKU</span>
                 <p className="font-semibold text-gray-900">HNY-{product.id.toString().padStart(4, '0')}</p>
               </div>
@@ -292,7 +293,7 @@ const ProductDetail = () => {
 
               <button
                 onClick={handleAddToCart}
-                className="flex-1 btn-primary flex items-center justify-center space-x-2 py-3"
+                className="flex-1 bg-amber-600 text-white flex items-center justify-center space-x-2 py-3 rounded-lg hover:bg-amber-700 transition-colors"
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span>Add to Cart</span>
@@ -300,7 +301,7 @@ const ProductDetail = () => {
 
               <button
                 onClick={handleBuyNow}
-                className="flex-1 btn-secondary flex items-center justify-center space-x-2 py-3"
+                className="flex-1 bg-amber-500 text-white flex items-center justify-center space-x-2 py-3 rounded-lg hover:bg-amber-600 transition-colors"
               >
                 <span>Buy Now</span>
               </button>
@@ -309,11 +310,11 @@ const ProductDetail = () => {
             {/* Shipping Info */}
             <div className="flex items-center space-x-6 text-sm text-gray-600">
               <div className="flex items-center">
-                <Truck className="w-5 h-5 mr-2 text-honey-600" />
+                <Truck className="w-5 h-5 mr-2 text-amber-600" />
                 <span>Free shipping on orders over KES 5,000</span>
               </div>
               <div className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-honey-600" />
+                <Shield className="w-5 h-5 mr-2 text-amber-600" />
                 <span>100% satisfaction guarantee</span>
               </div>
             </div>
@@ -329,18 +330,18 @@ const ProductDetail = () => {
                 <Link
                   key={relatedProduct.id}
                   to={`/products/${relatedProduct.id}`}
-                  className="card hover:shadow-xl transition-shadow duration-300"
+                  className="hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="h-48 bg-honey-50 flex items-center justify-center">
+                  <div className="h-48 flex items-center justify-center">
                     <span className="text-8xl">{relatedProduct.image}</span>
                   </div>
                   <div className="p-4">
-                    <span className="text-sm text-honey-600 font-medium">{relatedProduct.category}</span>
+                    <span className="text-sm text-amber-600 font-medium">{relatedProduct.category}</span>
                     <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2">
                       {relatedProduct.name}
                     </h3>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-honey-700">
+                      <span className="text-2xl font-bold text-amber-700">
                         KES {relatedProduct.price.toLocaleString()}
                       </span>
                     </div>
