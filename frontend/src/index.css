@@ -32,3 +32,24 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	@apply font-semibold;
 }
+
+/* Button utilities */
+.btn {
+	@apply inline-flex items-center justify-center font-medium rounded-lg transition-colors;
+}
+
+.btn-responsive {
+	@apply w-full sm:w-auto;
+}
+
+.btn-primary {
+	@apply bg-amber-600 text-white px-4 py-2 hover:bg-amber-700;
+}
+
+.btn-secondary {
+	@apply bg-white text-amber-600 border border-amber-600 px-4 py-2 hover:bg-amber-50;
+}
+
+.btn-icon {
+	@apply inline-flex items-center justify-center p-2 rounded-full bg-white shadow;
+}

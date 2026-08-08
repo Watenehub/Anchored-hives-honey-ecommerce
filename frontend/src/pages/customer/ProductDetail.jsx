@@ -293,7 +293,7 @@ const ProductDetail = () => {
 
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-amber-600 text-white flex items-center justify-center space-x-2 py-3 rounded-lg hover:bg-amber-700 transition-colors"
+                className="btn btn-responsive btn-primary flex items-center justify-center space-x-2"
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span>Add to Cart</span>
@@ -301,7 +301,7 @@ const ProductDetail = () => {
 
               <button
                 onClick={handleBuyNow}
-                className="flex-1 bg-amber-500 text-white flex items-center justify-center space-x-2 py-3 rounded-lg hover:bg-amber-600 transition-colors"
+                className="btn btn-responsive btn-secondary flex items-center justify-center space-x-2"
               >
                 <span>Buy Now</span>
               </button>
