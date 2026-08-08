@@ -185,9 +185,7 @@ const ProductDetail = () => {
     .slice(0, 4)
 
   const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i++) {
-      addToCart(product)
-    }
+    addToCart(product, quantity)
   }
 
   const handleBuyNow = () => {
