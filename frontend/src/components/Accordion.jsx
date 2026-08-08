@@ -8,12 +8,12 @@ const Accordion = ({ items }) => {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       {items.map((item, index) => (
-        <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+        <div key={index} className="overflow-hidden">
           <button
             onClick={() => toggle(index)}
-            className="w-full px-4 py-3 text-left bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors"
+            className="w-full px-4 py-3 text-left flex justify-between items-center transition-colors"
           >
             <span className="font-semibold text-gray-800 text-sm">{item.question}</span>
             <span className={`transform transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
@@ -21,7 +21,7 @@ const Accordion = ({ items }) => {
             </span>
           </button>
           {openIndex === index && (
-            <div className="px-6 py-4 bg-white text-gray-700">
+            <div className="px-6 py-4 text-gray-700">
               {item.answer}
             </div>
           )}
